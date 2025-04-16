@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root{
+  --white:#FFFFFF;
+  --light_purple: #8F12E1;
+  --purple:#4d0c79;
+  --gray: #131314;
+  --black: #050309;
+}
+
+body{
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: var(--white);
+  background-color: #050309;
+}
+p{
+  margin: 0;
+  color: var(--white);    
+  font-weight: 400;
+  text-align: left;
+}
+a{
+  text-decoration: none;
+}
+
+/* 反白顏色 */
+::selection{
+  color: white;
+  background: #8108d2b9;
+}
