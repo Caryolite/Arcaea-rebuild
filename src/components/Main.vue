@@ -18,7 +18,7 @@
         <h2>遊戲曲目</h2>
         <h3>SONGS</h3>
         <P>遊戲中可能玩得到的部分精選曲目</P>
-        <div class="songs w-[85%] pt-[36px] m-auto flex justify-between overflow-hidden">
+        <div class="w-[85%] pt-[36px] m-auto flex justify-between overflow-hidden">
             <div class="song-card">
                 <div style="background-image: url(img/songs/blackswan.webp);"></div>
                 <h4>Black Swan</h4>
@@ -46,6 +46,24 @@
             </div>
         </div>
     </div>
+    <!-- 登場人物 -->
+     <div class="w-full h-[700px] relative">
+        <div class="s3bg w-full h-full absolute z-[-1] bg-[url(/img/bg/s3_bg_dark.jpg)] bg-center bg-cover bg-no-repeat"></div>
+        <h2><span>登場人物</span></h2>
+        <h3>CHARACTERS</h3>
+        <div class="char_Q">
+            <div class="char_Hikari">
+                <h4>光</h4>
+                <h5>HIKARI</h5>
+            </div>
+            <img src="/img/char/Hikari_Q.webp" alt="" class="hikari_Q">
+            <img src="/img/char/Tairitsu_Q.webp" alt="" class="tairitsu_Q">
+            <div class="char_Tairitsu">
+                <h4>對立</h4>
+                <h5>TAIRITSU</h5>
+            </div>
+        </div> 
+     </div>
 </template>
 
 <style scoped>
@@ -84,17 +102,16 @@ h3{
 .song-card div{
     width: 220px;
     height: 220px;
-    
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.songs h4{
+.song-card h4{
     margin: 10px 0;
     font-size: 18px;
     font-weight: bold;
 }
-.songs h5{
+.song-card h5{
     font-weight: 200;
 }
 </style>
