@@ -1,5 +1,23 @@
 <script setup>
 
+import SongCard from './SongCard.vue';
+
+    class songCard {
+        constructor (title, artist, url){
+            this.title = title;
+            this.artist = artist;
+            this.url = url;
+        }
+    }
+
+const songCardList = [
+    {"title": "Black Swan", "artist": "ぺのれり" ,"url" : "img/songs/blackswan.webp"},
+    {"title": "Break! Break! Break!", "artist": "HiTECH NINJA vs Cranky" ,"url" : "img/songs/break!break!break!.jpg"},
+    {"title": "Straight Into The Lights", "artist": "Cosmograph" ,"url" : "img/songs/Straight_into_the_lights.png"},
+    {"title": "Distorted Fate", "artist": "Sakuzyo" ,"url" : "img/songs/Distorted_Fate.jpg"},
+    {"title": "Astral Quantization", "artist": "DJ Grimoire" ,"url" : "img/songs/astralquant.jpg"}
+]
+
 </script>
 
 <template>
@@ -19,30 +37,9 @@
         <h3>SONGS</h3>
         <P>遊戲中可能玩得到的部分精選曲目</P>
         <div class="w-[85%] pt-[36px] m-auto flex justify-between overflow-hidden">
-            <div class="song-card">
-                <div style="background-image: url(img/songs/blackswan.webp);"></div>
-                <h4>Black Swan</h4>
-                <h5>ぺのれり</h5>
-            </div>
-            <div class="song-card">
-                <div style="background-image: url(img/songs/break!break!break!.jpg);"></div>
-                <h4>Break! Break! Break!</h4>
-                <h5>HiTECH NINJA vs Cranky</h5>
-            </div>
-            <div class="song-card">
-                <div style="background-image: url(img/songs/Straight_into_the_lights.png);"></div>
-                <h4>Straight Into The Lights</h4>
-                <h5>Cosmograph</h5>
-            </div>
-            <div class="song-card">
-                <div style="background-image: url(img/songs/Distorted_Fate.jpg);"></div>
-                <h4>Distorted Fate</h4>
-                <h5>Sakuzyo</h5>
-            </div>
-            <div class="song-card">
-                <div style="background-image: url(img/songs/astralquant.jpg);"></div>
-                <h4>Astral Quantization</h4>
-                <h5>DJ Grimore</h5>
+
+            <div v-for="(song, index) in songCardList" :key="index">
+                <SongCard :title="song.title" :artist="song.artist" :url="song.url"/>
             </div>
         </div>
     </div>
