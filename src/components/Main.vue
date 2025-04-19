@@ -24,8 +24,8 @@ const songCardList = [
     <!-- 首頁 -->
     <div class="relative w-full h-screen overflow-hidden">
         <div class="h-[1024px] w-full m-auto absolute z-[-1] bg-[url(/img/bg/main_bg.jpg)] bg-center bg-cover bg-no-repeat"></div>
-        <img src="/img/char/tairitsu.webp" class="absolute h-[1000px] top-[100px] -bottom-[20%]" style="left: calc(40vw - 400px);">
-        <img src="/img/char/hikari.webp" class="absolute h-[800px] top-[200px] -bottom-[10%] z-[-1]" style="right: calc(40vw - 400px);">
+        <img src="/img/char/tairitsu.webp" class="absolute h-[1000px] top-[100px] -bottom-[20%] z-[-1]" style="left: calc(40vw - 400px);">
+        <img src="/img/char/hikari.webp" class="absolute h-[800px] top-[200px] -bottom-[10%]" style="right: calc(40vw - 400px);">
         <img src="/img/logo-tagline.svg" class="logo absolute top-[70%] left-[50%]">
         <img src="/img/logo-homepage.png" class="logo absolute h-[200px] top-[85%] left-[50%]">
         <a href="#"><img src="/img/google-play.png" class="absolute bottom-[40px] right-[8vw]"></a>
