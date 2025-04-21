@@ -27,11 +27,11 @@ import SongCard from './SongCard.vue';
     }
 
     const screenshots = [
+        {"scrURL": "/img/screenshot1.jpg"},
         {"scrURL": "/img/screenshot2.jpg"},
-        {"scrURL": "/img/Screenshot6.jpg"},
-        {"scrURL": "/img/screenshot1.png"},
-        {"scrURL": "/img/Screenshot7.jpg"},
-        {"scrURL": "/img/Screenshot8.jpg"}
+        {"scrURL": "/img/screenshot3.jpg"},
+        {"scrURL": "/img/screenshot4.jpg"},
+        {"scrURL": "/img/screenshot5.jpg"}
     ]
 
 </script>
