@@ -4,8 +4,8 @@ import Main from './components/Main.vue'
 </script>
 
 <template>
-  <Nav class="w-screen z-[1]"/>
-  <Main/>
+  <Nav class="w-full z-[1] over-hidden"/>
+  <Main class="w-full overflow-hidden"/>
 </template>
 
 <style scoped>
