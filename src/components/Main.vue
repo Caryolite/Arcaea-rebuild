@@ -10,13 +10,29 @@ import SongCard from './SongCard.vue';
         }
     }
 
-const songCardList = [
-    {"title": "Black Swan", "artist": "ぺのれり" ,"url" : "img/songs/blackswan.webp"},
-    {"title": "Break! Break! Break!", "artist": "HiTECH NINJA vs Cranky" ,"url" : "img/songs/break!break!break!.jpg"},
-    {"title": "Straight Into The Lights", "artist": "Cosmograph" ,"url" : "img/songs/Straight_into_the_lights.png"},
-    {"title": "Distorted Fate", "artist": "Sakuzyo" ,"url" : "img/songs/Distorted_Fate.jpg"},
-    {"title": "Astral Quantization", "artist": "DJ Grimoire" ,"url" : "img/songs/astralquant.jpg"}
-]
+    const songCardList = [
+        {"title": "Black Swan", "artist": "ぺのれり" ,"url" : "img/songs/blackswan.webp"},
+        {"title": "Break! Break! Break!", "artist": "HiTECH NINJA vs Cranky" ,"url" : "img/songs/break!break!break!.jpg"},
+        {"title": "Straight Into The Lights", "artist": "Cosmograph" ,"url" : "img/songs/Straight_into_the_lights.png"},
+        {"title": "Distorted Fate", "artist": "Sakuzyo" ,"url" : "img/songs/Distorted_Fate.jpg"},
+        {"title": "Astral Quantization", "artist": "DJ Grimoire" ,"url" : "img/songs/astralquant.jpg"}
+    ]
+
+    import Screenshot from './Screenshots.vue';
+
+    class screenshot {
+        constructor (scrURL){
+            this.scrURL = scrURL;
+        }
+    }
+
+    const screenshots = [
+        {"scrURL": "/img/screenshot2.jpg"},
+        {"scrURL": "/img/Screenshot6.jpg"},
+        {"scrURL": "/img/screenshot1.png"},
+        {"scrURL": "/img/Screenshot7.jpg"},
+        {"scrURL": "/img/Screenshot8.jpg"}
+    ]
 
 </script>
 
@@ -63,6 +79,25 @@ const songCardList = [
                 <h5 class="pb-[40px] text-[#8F12E1]">TAIRITSU</h5>
             </div>
         </div> 
+    </div>
+    <!-- 遊戲截圖 -->
+    <div class="w-full relative">
+        <h2>遊戲截圖</h2>
+        <h3>SCREENSHOTS</h3>
+        <div class="w-[70%] m-auto flex justify-between mb-[40px] overflow-hidden">
+
+            <div v-for="(scr, index) in screenshots" :key="index">
+                <Screenshot :scrURL="scr.scrURL" />
+            </div>
+
+        </div>
+        <div class="scr">
+            <!-- <img src="/img/screenshot2.jpg" alt="" class="scr-1b scrb" data-idx="1">
+            <img src="/img/Screenshot6.jpg" alt="" class="scr-2b scrb" data-idx="2">
+            <img src="/img/screenshot1.png" alt="" class="scr-3b scrb" data-idx="3">
+            <img src="/img/Screenshot7.jpg" alt="" class="scr-4b scrb" data-idx="4">
+            <img src="/img/Screenshot8.jpg" alt="" class="scr-5b scrb" data-idx="5"> -->
+        </div>
     </div>
 </template>
 
