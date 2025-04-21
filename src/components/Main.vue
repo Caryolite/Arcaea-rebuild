@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 
 import SongCard from './SongCard.vue';
 
@@ -34,6 +35,8 @@ import SongCard from './SongCard.vue';
         {"scrURL": "/img/screenshot5.jpg"}
     ]
 
+    const scrIndex = ref(1)
+
 </script>
 
 <template>
@@ -62,7 +65,7 @@ import SongCard from './SongCard.vue';
     </div>
     <!-- 登場人物 -->
     <div class="w-full h-[700px] relative">
-        <div class="s3bg w-full h-full absolute z-[-1] bg-[url(/img/bg/s3_bg_dark.jpg)] bg-center bg-cover bg-no-repeat"></div>
+        <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/s3_bg_dark.jpg)] bg-center bg-cover bg-no-repeat"></div>
         <h2 class="font-[900] text-[36px] pt-[40px]">
             <span class="char-title">登場人物</span>
         </h2>
@@ -86,17 +89,15 @@ import SongCard from './SongCard.vue';
         <h3>SCREENSHOTS</h3>
         <div class="w-[70%] m-auto flex justify-between mb-[40px] overflow-hidden">
 
-            <div v-for="(scr, index) in screenshots" :key="index">
-                <Screenshot :scrURL="scr.scrURL" />
+            <div v-for="(scr, index) in screenshots" :key="index" @click="scrIndex = index">
+                <Screenshot :scrURL="scr.scrURL" class="screenshot left-[0] h-[90px] w-auto"/>
             </div>
 
         </div>
-        <div class="scr">
-            <!-- <img src="/img/screenshot2.jpg" alt="" class="scr-1b scrb" data-idx="1">
-            <img src="/img/Screenshot6.jpg" alt="" class="scr-2b scrb" data-idx="2">
-            <img src="/img/screenshot1.png" alt="" class="scr-3b scrb" data-idx="3">
-            <img src="/img/Screenshot7.jpg" alt="" class="scr-4b scrb" data-idx="4">
-            <img src="/img/Screenshot8.jpg" alt="" class="scr-5b scrb" data-idx="5"> -->
+        <div class="w-[70%] m-auto relative pb-[80px]">
+            <div v-for="(scr, index) in screenshots" :key="index">
+                <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="absolute"/>
+            </div>
         </div>
     </div>
 </template>
@@ -129,5 +130,14 @@ h3{
 }
 .char{
     filter: drop-shadow(0 0 10px #000);
+}
+.screenshot{ 
+    filter: brightness(0.5);
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+.screenshot:hover{
+    filter: brightness(1);
+    transition-duration: 200ms;
 }
 </style>
