@@ -35,7 +35,7 @@ import SongCard from './SongCard.vue';
         {"scrURL": "/img/screenshot5.jpg"}
     ]
 
-    const scrIndex = ref(1)
+    const scrIndex = ref(0)
 
 </script>
 
@@ -94,9 +94,11 @@ import SongCard from './SongCard.vue';
             </div>
 
         </div>
-        <div class="w-[70%] m-auto relative pb-[80px]">
+        <div class="w-[70%] m-auto relative ">
             <div v-for="(scr, index) in screenshots" :key="index">
-                <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="absolute"/>
+                <transition>
+                    <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="absolute pb-[80px]"/>
+                </transition>
             </div>
         </div>
     </div>
@@ -139,5 +141,19 @@ h3{
 .screenshot:hover{
     filter: brightness(1);
     transition-duration: 200ms;
+}
+.fadeIn{
+    animation: fadeIn;
+    animation-duration: 0.2s;
+}
+/* transition */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
