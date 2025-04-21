@@ -40,68 +40,70 @@ import SongCard from './SongCard.vue';
 </script>
 
 <template>
-    <!-- 首頁 -->
-    <div class="relative w-full h-screen overflow-hidden">
-        <div class="h-[1024px] w-full m-auto absolute z-[-1] bg-[url(/img/bg/main_bg.jpg)] bg-center bg-cover bg-no-repeat"></div>
-        <img src="/img/char/tairitsu.webp" class="absolute h-[1000px] top-[100px] -bottom-[20%] z-[-1]" style="left: calc(40vw - 400px);">
-        <img src="/img/char/hikari.webp" class="absolute h-[800px] top-[200px] -bottom-[10%]" style="right: calc(40vw - 400px);">
-        <img src="/img/logo-tagline.svg" class="logo absolute top-[70%] left-[50%]">
-        <img src="/img/logo-homepage.png" class="logo absolute h-[200px] top-[85%] left-[50%]">
-        <a href="#"><img src="/img/google-play.png" class="absolute bottom-[40px] right-[8vw]"></a>
-        <a href="#"><img src="/img/appStore.png" class="absolute absolute bottom-[90px] right-[8vw]"></a>
+
+<!-- 首頁 -->
+<div class="relative w-full h-screen overflow-hidden">
+    <div class="h-[1024px] w-full m-auto absolute z-[-1] bg-[url(/img/bg/main_bg.jpg)] bg-center bg-cover bg-no-repeat"></div>
+    <img src="/img/char/tairitsu.webp" class="absolute h-[1000px] top-[100px] -bottom-[20%] z-[-1]" style="left: calc(40vw - 400px);">
+    <img src="/img/char/hikari.webp" class="absolute h-[800px] top-[200px] -bottom-[10%]" style="right: calc(40vw - 400px);">
+    <img src="/img/logo-tagline.svg" class="logo absolute top-[70%] left-[50%]">
+    <img src="/img/logo-homepage.png" class="logo absolute h-[200px] top-[85%] left-[50%]">
+    <a href="#"><img src="/img/google-play.png" class="absolute bottom-[40px] right-[8vw]"></a>
+    <a href="#"><img src="/img/appStore.png" class="absolute absolute bottom-[90px] right-[8vw]"></a>
+</div>
+<!-- 遊戲曲目 -->
+<div class="w-full h-[600px]">
+    <h2>遊戲曲目</h2>
+    <h3>SONGS</h3>
+    <P>遊戲中可能玩得到的部分精選曲目</P>
+    <div class="w-[85%] pt-[36px] m-auto flex justify-between overflow-hidden">
+
+        <div v-for="(song, index) in songCardList" :key="index">
+            <SongCard :title="song.title" :artist="song.artist" :url="song.url" />
+        </div>
+
     </div>
-    <!-- 遊戲曲目 -->
-    <div class="w-full h-[600px]">
-        <h2>遊戲曲目</h2>
-        <h3>SONGS</h3>
-        <P>遊戲中可能玩得到的部分精選曲目</P>
-        <div class="w-[85%] pt-[36px] m-auto flex justify-between overflow-hidden">
+</div>
+<!-- 登場人物 -->
+<div class="w-full h-[700px] relative">
+    <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/s3_bg_dark.jpg)] bg-center bg-cover bg-no-repeat"></div>
+    <h2 class="font-[900] text-[36px] pt-[40px]">
+        <span class="char-title">登場人物</span>
+    </h2>
+    <h3>CHARACTERS</h3>
+    <div class="w-full mt-[40px] overflow-hidden flex justify-center gap-[20px]">
+        <div class="self-end text-[40px] font-[900] mx-20[px]">
+            <h4 style="text-align: right;">光</h4>
+            <h5 class="pb-[40px] text-[#F95499]">HIKARI</h5>
+        </div>
+        <img src="/img/char/Hikari_Q.webp" class="char relative h-[400px] w-auto">
+        <img src="/img/char/Tairitsu_Q.webp" class="char relative h-[400px] w-auto">
+        <div class="self-end text-[40px] font-[900] mx-20[px]">
+            <h4 style="text-align: left;">對立</h4>
+            <h5 class="pb-[40px] text-[#8F12E1]">TAIRITSU</h5>
+        </div>
+    </div> 
+</div>
+<!-- 遊戲截圖 -->
+<div class="w-full relative">
+    <h2>遊戲截圖</h2>
+    <h3>SCREENSHOTS</h3>
+    <div class="w-[70%] m-auto flex justify-between mb-[40px] overflow-hidden">
 
-            <div v-for="(song, index) in songCardList" :key="index">
-                <SongCard :title="song.title" :artist="song.artist" :url="song.url" />
-            </div>
+        <div v-for="(scr, index) in screenshots" :key="index" @click="scrIndex = index">
+            <Screenshot :scrURL="scr.scrURL" class="screenshot left-[0] h-[90px] w-auto"/>
+        </div>
 
+    </div>
+    <div class="w-[70%] m-auto relative ">
+        <div v-for="(scr, index) in screenshots" :key="index">
+            <transition>
+                <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="absolute pb-[80px]"/>
+            </transition>
         </div>
     </div>
-    <!-- 登場人物 -->
-    <div class="w-full h-[700px] relative">
-        <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/s3_bg_dark.jpg)] bg-center bg-cover bg-no-repeat"></div>
-        <h2 class="font-[900] text-[36px] pt-[40px]">
-            <span class="char-title">登場人物</span>
-        </h2>
-        <h3>CHARACTERS</h3>
-        <div class="w-full mt-[40px] overflow-hidden flex justify-center gap-[20px]">
-            <div class="self-end text-[40px] font-[900] mx-20[px]">
-                <h4 style="text-align: right;">光</h4>
-                <h5 class="pb-[40px] text-[#F95499]">HIKARI</h5>
-            </div>
-            <img src="/img/char/Hikari_Q.webp" class="char relative h-[400px] w-auto">
-            <img src="/img/char/Tairitsu_Q.webp" class="char relative h-[400px] w-auto">
-            <div class="self-end text-[40px] font-[900] mx-20[px]">
-                <h4 style="text-align: left;">對立</h4>
-                <h5 class="pb-[40px] text-[#8F12E1]">TAIRITSU</h5>
-            </div>
-        </div> 
-    </div>
-    <!-- 遊戲截圖 -->
-    <div class="w-full relative">
-        <h2>遊戲截圖</h2>
-        <h3>SCREENSHOTS</h3>
-        <div class="w-[70%] m-auto flex justify-between mb-[40px] overflow-hidden">
+</div>
 
-            <div v-for="(scr, index) in screenshots" :key="index" @click="scrIndex = index">
-                <Screenshot :scrURL="scr.scrURL" class="screenshot left-[0] h-[90px] w-auto"/>
-            </div>
-
-        </div>
-        <div class="w-[70%] m-auto relative ">
-            <div v-for="(scr, index) in screenshots" :key="index">
-                <transition>
-                    <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="absolute pb-[80px]"/>
-                </transition>
-            </div>
-        </div>
-    </div>
 </template>
 
 <style scoped>
