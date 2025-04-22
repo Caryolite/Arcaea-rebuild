@@ -13,7 +13,7 @@ import { ref } from 'vue'
     <li><a href="">故事</a></li>
     <li><a href="">周邊</a></li>
     <li class="pl-[160px] relative">
-        <a href=""><img src="/img/nav-login.svg" alt="" class="absolute w-[140px] h-auto z-[-1] -top-[10px]"></a>
+        <a href=""><img src="/img/nav-login.svg" alt="" class="w-[140px] h-auto z-[-1] -top-[10px]"></a>
     </li>
   </ul>
 </header></div>
@@ -21,7 +21,7 @@ import { ref } from 'vue'
 </template>
 
 <style scoped>
-header ul a{
+header li{
     color: var(--white);
     text-decoration: none;
     list-style: none;
@@ -29,8 +29,7 @@ header ul a{
     font-size: 18px;
     padding: 20px 0;
     margin-left: 50px;
-}
-header li{
+    align-content: center;
     text-decoration: none;
     list-style: none;
 }
