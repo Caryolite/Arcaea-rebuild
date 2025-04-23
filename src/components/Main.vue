@@ -85,7 +85,7 @@ import SongCard from './SongCard.vue';
     </div> 
 </div>
 <!-- 遊戲截圖 -->
-<div class="w-full relative">
+<div class="w-full h-full relative">
     <h2>遊戲截圖</h2>
     <h3>SCREENSHOTS</h3>
     <div class="w-[70%] m-auto flex justify-between mb-[40px] overflow-hidden">
@@ -98,9 +98,22 @@ import SongCard from './SongCard.vue';
     <div class="w-[70%] m-auto relative ">
         <div v-for="(scr, index) in screenshots" :key="index">
             <transition>
-                <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="absolute pb-[80px]"/>
+                <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="relative pb-[80px]"/>
             </transition>
         </div>
+    </div>
+</div>
+<!-- 影片 -->
+<div class="w-full relative overflow-hidden">
+    <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/s5_bg.jpg)] bg-center bg-cover bg-no-repeat brightness-[0.25]"></div>
+    <h2>官方影片</h2>
+    <h3>VIDEO</h3>
+    <div class="relative w-[70%] m-auto pb-[20px]">
+        <iframe class="w-full aspect-[16/9]" src="https://www.youtube.com/embed/f7hssW8XEzE?si=jCmzu-L9wYH0AE48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="w-full flex justify-center pb-[40px]">
+        <a href="#"><img src="/img/appStore.png"></a>
+        <a href="#"><img src="/img/google-play.png"></a>
     </div>
 </div>
 
