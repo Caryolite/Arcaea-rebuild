@@ -4,6 +4,7 @@
   --white:#FFFFFF;
   --light_purple: #8F12E1;
   --purple:#4d0c79;
+  --light-gray: #626262;
   --gray: #131314;
   --black: #050309;
 }
@@ -21,7 +22,7 @@ p{
   margin: 0;
   color: var(--white);    
   font-weight: 400;
-  text-align: left;
+  /* text-align: left; */
 }
 a{
   text-decoration: none;

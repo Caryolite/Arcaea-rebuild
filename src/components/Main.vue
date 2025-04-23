@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 
+import Footer from './footer.vue';
+
 import SongCard from './SongCard.vue';
 
     class songCard {
@@ -116,6 +118,8 @@ import SongCard from './SongCard.vue';
         <a href="#"><img src="/img/google-play.png"></a>
     </div>
 </div>
+
+<Footer />
 
 </template>
 
