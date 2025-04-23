@@ -16,7 +16,7 @@ import SongCard from './SongCard.vue';
     const songCardList = [
         {"title": "Black Swan", "artist": "ぺのれり" ,"url" : "img/songs/blackswan.webp"},
         {"title": "Break! Break! Break!", "artist": "HiTECH NINJA vs Cranky" ,"url" : "img/songs/break!break!break!.jpg"},
-        {"title": "Straight Into The Lights", "artist": "Cosmograph" ,"url" : "img/songs/Straight_into_the_lights.png"},
+        {"title": "Straight Into The Lights", "artist": "Cosmograph" ,"url" : "img/songs/Straight_into_the_lights.jpg"},
         {"title": "Distorted Fate", "artist": "Sakuzyo" ,"url" : "img/songs/Distorted_Fate.jpg"},
         {"title": "Astral Quantization", "artist": "DJ Grimoire" ,"url" : "img/songs/astralquant.jpg"}
     ]
@@ -45,7 +45,7 @@ import SongCard from './SongCard.vue';
 
 <!-- 首頁 -->
 <div class="relative w-full h-screen overflow-hidden">
-    <div class="h-[1024px] w-full m-auto absolute z-[-1] bg-[url(/img/bg/main_bg.jpg)] bg-center bg-cover bg-no-repeat"></div>
+    <div class="h-[1024px] w-full m-auto absolute z-[-1] bg-[url(/img/bg/bg01.jpg)] bg-center bg-cover bg-no-repeat"></div>
     <img src="/img/char/tairitsu.webp" class="absolute h-[1000px] top-[100px] -bottom-[20%] z-[-1]" style="left: calc(40vw - 400px);">
     <img src="/img/char/hikari.webp" class="absolute h-[800px] top-[200px] -bottom-[10%]" style="right: calc(40vw - 400px);">
     <img src="/img/logo-tagline.svg" class="logo absolute top-[70%] left-[50%]">
@@ -68,7 +68,7 @@ import SongCard from './SongCard.vue';
 </div>
 <!-- 登場人物 -->
 <div class="w-full h-[700px] relative">
-    <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/s3_bg_dark.jpg)] bg-center bg-cover bg-no-repeat"></div>
+    <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/bg02.jpg)] bg-center bg-cover bg-no-repeat"></div>
     <h2 class="font-[900] text-[36px] pt-[40px]">
         <span class="char-title">登場人物</span>
     </h2>
@@ -102,12 +102,12 @@ import SongCard from './SongCard.vue';
         <div v-for="(scr, index) in screenshots" :key="index">
             <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="relative pb-[80px]"/>
         </div>
-        
+
     </div>
 </div>
 <!-- 影片 -->
 <div class="w-full relative overflow-hidden">
-    <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/s5_bg.jpg)] bg-center bg-cover bg-no-repeat brightness-[0.25]"></div>
+    <div class="w-full h-full absolute z-[-1] bg-[url(/img/bg/bg03.jpg)] bg-center bg-cover bg-no-repeat brightness-[0.25]"></div>
     <h2>官方影片</h2>
     <h3>VIDEO</h3>
     <div class="relative w-[70%] m-auto pb-[20px]">
