@@ -98,11 +98,11 @@ import SongCard from './SongCard.vue';
 
     </div>
     <div class="w-[70%] m-auto relative ">
+
         <div v-for="(scr, index) in screenshots" :key="index">
-            <transition>
-                <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="relative pb-[80px]"/>
-            </transition>
+            <Screenshot :scrURL="scr.scrURL" v-if="scrIndex === index" class="relative pb-[80px]"/>
         </div>
+        
     </div>
 </div>
 <!-- 影片 -->
