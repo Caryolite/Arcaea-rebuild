@@ -14,7 +14,7 @@ import SongCard from './SongCard.vue';
     }
 
     const songCardList = [
-        {"title": "Black Swan", "artist": "ぺのれり" ,"url" : "img/songs/blackswan.webp"},
+        {"title": "Black Swan", "artist": "ぺのれり" ,"url" : "img/songs/blackswan.jpg"},
         {"title": "Break! Break! Break!", "artist": "HiTECH NINJA vs Cranky" ,"url" : "img/songs/break!break!break!.jpg"},
         {"title": "Straight Into The Lights", "artist": "Cosmograph" ,"url" : "img/songs/Straight_into_the_lights.jpg"},
         {"title": "Distorted Fate", "artist": "Sakuzyo" ,"url" : "img/songs/Distorted_Fate.jpg"},
