@@ -119,8 +119,6 @@ import SongCard from './SongCard.vue';
     </div>
 </div>
 
-<Footer />
-
 </template>
 
 <style scoped>
