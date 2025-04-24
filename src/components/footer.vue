@@ -7,10 +7,10 @@
 <!-- footer -->
 <div>
     <div class="pt-[40px] flex justify-center gap-[10px]">
-        <p>聯繫我們</p>
-        <p>服務條款</p>
-        <p>二次創作管理條例</p>
-        <p>直播準則</p>
+        <p class="cursor-pointer">聯繫我們</p>
+        <p class="cursor-pointer">服務條款</p>
+        <p class="cursor-pointer">二次創作管理條例</p>
+        <p class="cursor-pointer">直播準則</p>
     </div>
     <p class="gray text-center px-[20px] py-[10px]">
         本網站非Arcaea官方。本網站無商業使用，僅作為學習用途。
