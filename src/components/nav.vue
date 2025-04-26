@@ -1,18 +1,25 @@
 <script setup>
 
+import { defineEmits } from 'vue';
+
+const emit = defineEmits(['changePage']);
+const changePage = (page) => {
+  emit('changePage', page);
+};
+
 </script>
 
 <template>
 
 <div class="absolute top-[30px] ">
 <header class="w-[80%] m-auto flex justify-between align-center items-center">
-  <div class="float-left"><img src="/img/logo-dark-bg.svg"></div>
+  <div class="float-left" @click="changePage(1)"><img src="/img/logo-dark-bg.svg"></div>
   <ul class="flex justify-end float-right m-0">
-    <li><a href="">樂曲排名</a></li>
-    <li><a href="">故事</a></li>
-    <li><a href="">周邊</a></li>
-    <li class="login pl-[160px] relative">
-        <a href=""><img src="/img/nav-login.svg" class="w-[140px] h-auto z-[-1] -top-[10px]"></a>
+    <li @click="changePage(2)">樂曲排名</li>
+    <li @click="changePage(3)">故事</li>
+    <li @click="changePage(4)">周邊</li>
+    <li @click="changePage(5)" class="login pl-[160px] relative">
+        <img src="/img/nav-login.svg" class="w-[140px] h-auto z-[-1] -top-[10px]">
     </li>
   </ul>
 </header></div>

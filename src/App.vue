@@ -7,12 +7,16 @@ import story from './components/story.vue'
 import { ref } from 'vue'
 const pageIndex = ref(1);
 
+const changePage = (page) => {
+  pageIndex.value = page;
+};
+
 </script>
 
 <template>
-  <Nav class="w-full z-[1] over-hidden" />
-  <Main class="w-full overflow-hidden" />
-  <!-- <story class="relative" /> -->
+  <Nav class="w-full z-[1] over-hidden" @changePage="changePage" />
+  <Main v-if="pageIndex===1" class="w-full overflow-hidden" />
+  <story v-if="pageIndex===3" class="relative" />
   <Footer/>
 </template>
 
