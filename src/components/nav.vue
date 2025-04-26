@@ -6,13 +6,13 @@
 
 <div class="absolute top-[30px] ">
 <header class="w-[80%] m-auto flex justify-between align-center items-center">
-  <div class="float-left"><img src="/img/logo-dark-bg.svg"></div>
+  <div class="float-left"><router-link to="/"><img src="/img/logo-dark-bg.svg"></router-link></div>
   <ul class="flex justify-end float-right m-0">
-    <li><a href="">樂曲排名</a></li>
-    <li><a href="">故事</a></li>
-    <li><a href="">周邊</a></li>
+    <li><router-link to="rank">樂曲排名</router-link></li>
+    <li><router-link to="story">故事</router-link></li>
+    <li><router-link to="goods">周邊</router-link></li>
     <li class="login pl-[160px] relative">
-        <a href=""><img src="/img/nav-login.svg" class="w-[140px] h-auto z-[-1] -top-[10px]"></a>
+      <router-link to="login"><img src="/img/nav-login.svg" class="w-[140px] h-auto z-[-1] -top-[10px]"></router-link>
     </li>
   </ul>
 </header></div>
